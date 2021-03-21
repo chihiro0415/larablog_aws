@@ -60,7 +60,7 @@ class PostController extends Controller
         // バケットの`larablog-img`フォルダへアップロード
         $path = Storage::disk('s3')->putFile('larablog-img', $image, 'public');
         // アップロードした画像のフルパスを取得
-        $post->image_path = Storage::disk('s3')->url($path);
+        $post -> image_path = Storage::disk('s3')->url($path);
 
         $post -> save(); //保存
         
@@ -119,7 +119,7 @@ class PostController extends Controller
         // バケットの`larablog-img`フォルダへアップロード
         $path = Storage::disk('s3')->putFile('larablog-img', $image, 'public');
         // アップロードした画像のフルパスを取得
-        $post->image_path = Storage::disk('s3')->url($path);
+        $post -> image_path = Storage::disk('s3')->url($path);
 
         $post -> save();
         return view('posts.show', compact('post'));

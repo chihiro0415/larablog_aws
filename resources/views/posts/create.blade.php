@@ -12,7 +12,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('posts.store') }}" method="POST">
+            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
                     <label>タイトル</label>
