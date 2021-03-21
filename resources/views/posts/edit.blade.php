@@ -27,6 +27,7 @@
                     <label>image</label>
                     <div><input type="file" name="image"></div>
                 </div>
+                {{ csrf_field() }}
                 <button type="submit" class="btn btn-primary">更新する</button>
             </form>
         </div>
