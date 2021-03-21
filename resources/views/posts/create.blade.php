@@ -23,6 +23,10 @@
                     <textarea class="form-control" placeholder="内容" rows="5" name="body">
                     </textarea>
                 </div>
+                <div class="form-group">
+                    <label>image</label>
+                    <input type="file" name="image">
+                </div>
                 <button type="submit" class="btn btn-primary">作成</button>
             </form>
         </div>

@@ -54,6 +54,13 @@ class PostController extends Controller
         $post -> body     = $request -> body; //ユーザー入力のbodyを代入
         $post -> user_id  = Auth::id(); //ログイン中のユーザーidを代入
 
+        //s3アップロード開始
+        $image = $request->file('image');
+        // バケットの`myprefix`フォルダへアップロード
+        $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+        // アップロードした画像のフルパスを取得
+        $post->image_path = Storage::disk('s3')->url($path);
+
         $post -> save(); //保存
         
         return redirect()->route('posts.index');
@@ -105,6 +112,14 @@ class PostController extends Controller
         $post = Post::find($id);
         $post -> title    = $request -> title;
         $post -> body     = $request -> body;
+
+        //s3アップロード開始
+        $image = $request->file('image');
+        // バケットの`myprefix`フォルダへアップロード
+        $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+        // アップロードした画像のフルパスを取得
+        $post->image_path = Storage::disk('s3')->url($path);
+
         $post -> save();
         return view('posts.show', compact('post'));
     }
