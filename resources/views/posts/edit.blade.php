@@ -23,6 +23,10 @@
                     <label>内容</label>
                     <textarea class="form-control" rows="5" name="body">{{ $post->body }}</textarea>
                 </div>
+                <div class="form-group">
+                    <label>image</label>
+                    <div><input type="file" name="image"></div>
+                </div>
                 <button type="submit" class="btn btn-primary">更新する</button>
             </form>
         </div>

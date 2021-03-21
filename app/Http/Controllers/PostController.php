@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Comment;
 use Auth;
+use Storage;
 
 
 class PostController extends Controller

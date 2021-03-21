@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label>image</label>
-                    <input type="file" name="image">
+                    <div><input type="file" name="image"></div>
                 </div>
                 <button type="submit" class="btn btn-primary">作成</button>
             </form>
