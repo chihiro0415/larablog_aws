@@ -117,7 +117,7 @@ class PostController extends Controller
         //s3アップロード開始
         $image = $request->file('image');
         // バケットの`larablog-img`フォルダへアップロード
-        $path = Storage::disk('s3')->putFile('larablog-img', $image, 'public');
+        $path = Storage::disk('s3')->putFile('/', $image, 'public');
         // アップロードした画像のフルパスを取得
         // $post -> image_path = Storage::disk('s3')->url($path);
 
