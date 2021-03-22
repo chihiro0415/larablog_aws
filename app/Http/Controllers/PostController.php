@@ -113,7 +113,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post -> title    = $request -> title;
         $post -> body     = $request -> body;
-
+        Log::debug($request);
         //s3アップロード開始
         $image = $request->file('image');
         // バケットの`larablog-img`フォルダへアップロード
